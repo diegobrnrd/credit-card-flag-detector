@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Credit Card Flag Detector</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="bg"></div>
+
+    <main class="container">
+      <header class="topbar">
+        <div class="topbar__title">
+          <h1>Detector de Bandeira</h1>
+          <p>Identifique a bandeira pelo número do cartão — tudo roda localmente no navegador.</p>
+        </div>
+
+        <div class="topbar__meta">
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">JavaScript</span>
+        </div>
+      </header>
+
+      <section class="grid">
+        <!-- Preview do cartão -->
+        <aside class="preview" aria-label="Prévia do cartão">
+          <div class="card3d" id="card3d">
+            <div class="card3dInner">
+              <div class="cardFace cardFace--front">
+                <div class="cardHeader">
+                  <div class="chip" aria-hidden="true"></div>
+                  <div class="brandLogo" id="brandLogo" aria-label="Logo da bandeira">
+                    <!-- preenchido via JS -->
+                  </div>
+                </div>
+
+                <div class="cardNumber" id="cardNumberPreview">•••• •••• •••• ••••</div>
+
+                <div class="cardFooter">
+                  <div class="cardField">
+                    <div class="cardLabel">Titular</div>
+                    <div class="cardValue">SEU NOME</div>
+                  </div>
+                  <div class="cardField cardField--right">
+                    <div class="cardLabel">Validade</div>
+                    <div class="cardValue">12/30</div>
+                  </div>
+                </div>
+
+                <div class="shine" aria-hidden="true"></div>
+                <div class="noise" aria-hidden="true"></div>
+              </div>
+
+              <div class="cardFace cardFace--back" aria-hidden="true">
+                <div class="cardStripe"></div>
+                <div class="cardBackBody">
+                  <div class="cardCvvLabel">CVV</div>
+                  <div class="cardCvvValue">123</div>
+                  <div class="cardBackText">
+                    Visual educacional. Nenhum dado e sensivel e armazenado.
+                  </div>
+                  <div class="brandLogo brandLogo--back" id="brandLogoBack" aria-label="Logo da bandeira no verso"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="previewInfo">
+            <div class="mini">
+              <div class="mini__label">Bandeira</div>
+              <div class="mini__value" id="brandText">—</div>
+            </div>
+            <div class="mini">
+              <div class="mini__label">Comprimento</div>
+              <div class="mini__value mono" id="length">0</div>
+            </div>
+            <div class="mini">
+              <div class="mini__label">Luhn</div>
+              <div class="mini__value" id="luhn">—</div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Form -->
+        <section class="panel">
+          <div class="panel__header">
+            <h2>Digite o número do cartão</h2>
+            <p>Você pode colar com espaços/traços. A detecção acontece em tempo real.</p>
+          </div>
+
+          <div class="field">
+            <label for="cardNumber" class="label">Número do cartão</label>
+
+            <div class="inputWrap" id="inputWrap">
+              <input
+                id="cardNumber"
+                class="input"
+                inputmode="numeric"
+                autocomplete="cc-number"
+                placeholder="Ex.: 4111 1111 1111 1111"
+                aria-describedby="helper status"
+              />
+
+              <button id="btnClear" class="btn btn--ghost" type="button" title="Limpar">
+                Limpar
+              </button>
+
+              <button id="btnCopy" class="btn" type="button" title="Copiar número (somente dígitos)">
+                Copiar
+              </button>
+            </div>
+
+            <div class="helperRow">
+              <span id="helper" class="helper">Dica: clique no cartão para “virar” (efeito 3D).</span>
+              <span class="counter mono"><span id="digitsCount">0</span> dígitos</span>
+            </div>
+          </div>
+
+          <div class="statusBar" role="status" aria-live="polite">
+            <div class="statusDot" id="statusDot" aria-hidden="true"></div>
+            <div class="statusText" id="status">Aguardando…</div>
+            <div class="statusRight">
+              <span class="badge" id="brandBadge">—</span>
+            </div>
+          </div>
+
+          <div class="supported">
+            <div class="supported__title">Bandeiras suportadas</div>
+            <div class="chips" aria-label="Lista de bandeiras suportadas">
+              <span class="chipTag">MasterCard</span>
+              <span class="chipTag">Visa (16)</span>
+              <span class="chipTag">Amex</span>
+              <span class="chipTag">Diners</span>
+              <span class="chipTag">Discover</span>
+              <span class="chipTag">EnRoute</span>
+              <span class="chipTag">JCB</span>
+              <span class="chipTag">Voyager</span>
+              <span class="chipTag">HiperCard</span>
+              <span class="chipTag">Aura</span>
+            </div>
+          </div>
+
+          <details class="details">
+            <summary>Notas</summary>
+            <p>
+              Alguns intervalos/prefixos (principalmente de bandeiras antigas/regionais) variam por fonte.
+              Aqui foi implementado um conjunto de regras prático para estudo.
+            </p>
+          </details>
+        </section>
+      </section>
+
+      <footer class="footer">
+        <small>Projeto educacional — não armazena nem transmite dados.</small>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
