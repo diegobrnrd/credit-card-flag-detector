@@ -1,5 +1,9 @@
 # Credit Card Flag Detector
 
+[![HTML5](https://img.shields.io/badge/HTML5-20.1%25-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-36.1%25-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-43.8%25-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+
 Aplicação web **educacional** para **detectar a bandeira de um cartão** a partir do número informado (BIN/prefixos + regras de comprimento) e exibir feedback de **validação Luhn** em tempo real. Tudo roda **localmente no navegador** (sem dependências e sem backend).
 
 ## Screenshot
@@ -99,6 +103,11 @@ Contribuições são bem-vindas!
 4. Push: `git push origin feature/minha-feature`
 5. Abra um Pull Request
 
+## 👤 Autor
+
+[**Diego Bernardo**](https://github.com/diegobrnrd)
+
 ## Licença
 
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+Este projeto está licenciado sob a **MIT License**.  
+Veja o arquivo [LICENSE](LICENSE).
