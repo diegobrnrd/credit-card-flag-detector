@@ -103,7 +103,7 @@ Contribuições são bem-vindas!
 4. Push: `git push origin feature/minha-feature`
 5. Abra um Pull Request
 
-## 👤 Autor
+## Autor
 
 [**Diego Bernardo**](https://github.com/diegobrnrd)
 
