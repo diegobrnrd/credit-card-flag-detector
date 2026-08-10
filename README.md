@@ -1,27 +1,27 @@
 # Credit Card Flag Detector
 
-[![HTML5](https://img.shields.io/badge/HTML5-20.1%25-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-36.1%25-1572B6?logo=css&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-43.8%25-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+[![HTML5](https://img.shields.io/badge/HTML5-20.1%25-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-36.1%25-1572B6?logo=css&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-43.8%25-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-Aplicação web **educacional** para **detectar a bandeira de um cartão** a partir do número informado (BIN/prefixos + regras de comprimento) e exibir feedback de **validação Luhn** em tempo real. Tudo roda **localmente no navegador** (sem dependências e sem backend).
+**Educational** web application to **detect a card's brand** from the entered number (BIN/prefixes + length rules) and display real-time **Luhn validation** feedback. Everything runs **locally in the browser** (no dependencies and no backend).
 
 ## Screenshot
 
-![Screenshot da aplicação](assets/screenshot.png)
+![Application screenshot](assets/screenshot.png)
 
-## Destaques
+## Highlights
 
-- **Detecção em tempo real** da bandeira com base em prefixos e tamanho do número
-- **Validação Luhn** (com status visual: ok / falhou / curto)
-- Interface moderna com **preview do cartão (efeito 3D + flip)** ao clicar
-- **Logos em SVG inline** (sem requisições externas)
-- Botões utilitários: **limpar** e **copiar apenas dígitos**
-- Projeto **100% front-end**: HTML + CSS + JavaScript
+- **Real-time detection** of the brand based on prefixes and number length
+- **Luhn validation** (with visual status: ok / failed / short)
+- Modern interface with **card preview (3D effect + flip)** on click
+- **Inline SVG logos** (no external requests)
+- Utility buttons: **clear** and **copy digits only**
+- **100% front-end** project: HTML + CSS + JavaScript
 
-## Bandeiras suportadas
+## Supported Brands
 
-O detector implementa regras práticas (para fins de estudo) para identificar:
+The detector implements practical rules (for study purposes) to identify:
 
 - MasterCard
 - Visa (16)
@@ -34,80 +34,80 @@ O detector implementa regras práticas (para fins de estudo) para identificar:
 - HiperCard
 - Aura
 
-> Observação: alguns intervalos/prefixos podem variar conforme a fonte (especialmente bandeiras antigas/regionais). Este projeto prioriza uma implementação objetiva para aprendizado.
+> Note: some ranges/prefixes may vary depending on the source (especially older/regional brands). This project prioritizes a straightforward implementation for learning purposes.
 
-## Demo / Como usar
+## Demo / How to Use
 
-### Rodando localmente (sem instalar nada)
+### Running locally (without installing anything)
 
-1. Clone o repositório:
+1. Clone the repository:
    ```bash
    git clone https://github.com/diegobrnrd/credit-card-flag-detector.git
    ```
-2. Acesse a pasta:
+2. Go to the folder:
    ```bash
    cd credit-card-flag-detector
    ```
-3. Abra o arquivo `index.html` no navegador.
+3. Open the `index.html` file in your browser.
 
-Dica: se você utiliza VS Code, pode usar a extensão **Live Server** para recarregar automaticamente.
+Tip: if you use VS Code, you can use the **Live Server** extension to auto-reload.
 
-## Como funciona
+## How It Works
 
-A lógica está concentrada em `script.js` e segue três etapas principais:
+The logic is concentrated in `script.js` and follows three main steps:
 
-1. **Sanitização do input**  
-   Remove qualquer caractere não numérico (permite colar com espaços/traços).
+1. **Input sanitization**
+   Removes any non-numeric character (allows pasting with spaces/dashes).
 
-2. **Detecção de bandeira (regras/BIN)**  
-   A função `detectBrand(digits)` aplica regex e checagens por faixa:
-   - Visa: `^4` com **16 dígitos**
-   - MasterCard: `51–55` ou `2221–2720` com **16 dígitos**
-   - Amex: `34` ou `37` com **15 dígitos**
-   - Discover: `6011`, `65`, `644-649`, `622126-622925` etc.
-   - Demais bandeiras: prefixos/intervalos específicos
+2. **Brand detection (rules/BIN)**
+   The `detectBrand(digits)` function applies regex and range checks:
+   - Visa: `^4` with **16 digits**
+   - MasterCard: `51–55` or `2221–2720` with **16 digits**
+   - Amex: `34` or `37` with **15 digits**
+   - Discover: `6011`, `65`, `644-649`, `622126-622925`, etc.
+   - Other brands: specific prefixes/ranges
 
-3. **Validação Luhn**  
-   A função `luhnCheck(digits)` verifica se o número passa no algoritmo de Luhn e atualiza os estados visuais (status, badge e indicador).
+3. **Luhn validation**
+   The `luhnCheck(digits)` function checks whether the number passes the Luhn algorithm and updates the visual states (status, badge, and indicator).
 
-## Estrutura do projeto
+## Project Structure
 
-- `index.html` — layout e marcação da interface
-- `styles.css` — estilos (visual “glass”, cartão 3D, responsividade)
-- `script.js` — regras de detecção, Luhn e interações da UI
+- `index.html` — interface layout and markup
+- `styles.css` — styling ("glass" look, 3D card, responsiveness)
+- `script.js` — detection rules, Luhn, and UI interactions
 
-## Privacidade e segurança
+## Privacy and Security
 
-Este é um projeto **educacional**. A aplicação:
+This is an **educational** project. The application:
 
-- **não armazena** números de cartão
-- **não envia** dados para servidor
-- executa toda a detecção **localmente** no navegador
+- **does not store** card numbers
+- **does not send** data to a server
+- performs all detection **locally** in the browser
 
-Ainda assim, evite inserir dados reais em demonstrações públicas.
+Even so, avoid entering real data in public demos.
 
-## Roadmap (ideias)
+## Roadmap (ideas)
 
-- [ ] Adicionar suporte a **Visa 13/19** (opcional) e outras variações
-- [ ] Separar “core” de detecção em módulo reutilizável (`detector.js`)
-- [ ] Testes unitários para regras e Luhn
-- [ ] Publicar demo via GitHub Pages
+- [ ] Add support for **Visa 13/19** (optional) and other variations
+- [ ] Separate the detection "core" into a reusable module (`detector.js`)
+- [ ] Unit tests for rules and Luhn
+- [ ] Publish demo via GitHub Pages
 
-## Contribuindo
+## Contributing
 
-Contribuições são bem-vindas!
+Contributions are welcome!
 
-1. Faça um fork do projeto
-2. Crie uma branch: `git checkout -b feature/minha-feature`
-3. Commit: `git commit -m "feat: minha feature"`
-4. Push: `git push origin feature/minha-feature`
-5. Abra um Pull Request
+1. Fork the project
+2. Create a branch: `git checkout -b feature/my-feature`
+3. Commit: `git commit -m "feat: my feature"`
+4. Push: `git push origin feature/my-feature`
+5. Open a Pull Request
 
-## Autor
+## Author
 
 [**Diego Bernardo**](https://github.com/diegobrnrd)
 
-## Licença
+## License
 
-Este projeto está licenciado sob a **MIT License**.  
-Veja o arquivo [LICENSE](LICENSE).
+This project is licensed under the **MIT License**.
+See the [LICENSE](LICENSE) file.
