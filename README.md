@@ -1,8 +1,12 @@
 # Credit Card Flag Detector
 
-[![HTML5](https://img.shields.io/badge/HTML5-20.1%25-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-36.1%25-1572B6?logo=css&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-43.8%25-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+<img src="assets/credit-card-flag-detector.png" alt="Credit Card Flag Detector">
+
+<p align="center">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://img.shields.io/badge/HTML5-20.1%25-E34F26?logo=html5&logoColor=white" alt="HTML5"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.shields.io/badge/CSS3-36.1%25-1572B6?logo=css&logoColor=white" alt="CSS3"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-43.8%25-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript"></a>
+</p>
 
 **Educational** web application to **detect a card's brand** from the entered number (BIN/prefixes + length rules) and display real-time **Luhn validation** feedback. Everything runs **locally in the browser** (no dependencies and no backend).
 
